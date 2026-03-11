@@ -38,15 +38,6 @@ Este repositorio queda preparado para una entrega formal a Nexos Software con lo
 - Capturas del frontend funcionando
 - Enlace a la API publica utilizada
 
-### Checklist de cumplimiento
-
-- [x] Descripcion general del proyecto
-- [x] Justificacion de decisiones tecnicas
-- [x] Pasos de ejecucion con Docker
-- [x] Enlace a la API publica utilizada
-- [ ] Diagrama de arquitectura adjunto en `arquitectura/`
-- [ ] Capturas del frontend adjuntas en `docs/screenshots/`
-
 ## Arquitectura de la solucion
 
 ### Microservicios implementados
@@ -521,17 +512,6 @@ dotnet run
 - No hay observabilidad avanzada, tracing ni API gateway.
 - La carpeta `arquitectura/` esta disponible para completar la evidencia visual del diseno.
 
-## Posibles mejoras
-
-- Incorporar base de datos independiente por microservicio
-- Implementar autenticacion real y manejo de tokens
-- Introducir variables de entorno para URLs de APIs
-- Agregar healthchecks y dependencias explicitas en Docker Compose
-- Incorporar API Gateway o BFF
-- Implementar CI/CD
-- Anadir pruebas unitarias y de integracion mas completas
-- Agregar diagrama formal de arquitectura a la carpeta `arquitectura/`
-
 ## API publica utilizada
 
 La API publica integrada en la solucion es:
@@ -544,14 +524,11 @@ Uso dentro del proyecto:
 - Carga de publicaciones de ejemplo
 - Recarga manual desde la interfaz
 
-
-
 ### 1. Diseno de arquitectura
 
 - Microservicios definidos por dominio
 - Comunicacion REST establecida
 - Base simulada incluida con MongoDB
-- Carpeta preparada para diagrama arquitectonico
 
 ### 2. Frontend moderno
 
