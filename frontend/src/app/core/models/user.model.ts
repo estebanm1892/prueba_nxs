@@ -1,5 +1,6 @@
-export interface UserSession {
-  email: string;
-  role: 'admin' | 'user';
-  isAuthenticated: boolean;
+export interface User {
+    id: number;
+    name: string;
+    email: string;
+    role: string;
 }

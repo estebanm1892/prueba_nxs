@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body.theme-light {
+    --bg-color: #f5f7fb;
+    --text-color: #1f2937;
+    --card-bg: #ffffff;
+    --sidebar-bg: #e9eef6;
+    --hover-bg: #dbe6f5;
+    --border-color: #d1d5db;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+body.theme-dark {
+    --bg-color: #111827;
+    --text-color: #f9fafb;
+    --card-bg: #1f2937;
+    --sidebar-bg: #0f172a;
+    --hover-bg: #334155;
+    --border-color: #374151;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+* {
+    box-sizing: border-box;
+}

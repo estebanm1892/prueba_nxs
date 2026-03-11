@@ -35,6 +35,19 @@ services:
     networks:
       - abc-network
 
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: abc-frontend
+    ports:
+      - "4200:4000"
+    environment:
+      PORT: 4000
+      NG_ALLOWED_HOSTS: localhost,127.0.0.1
+    networks:
+      - abc-network
+      
   mongodb:
     image: mongo:8
     container_name: mongodb

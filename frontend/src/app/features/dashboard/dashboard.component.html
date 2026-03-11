@@ -1,0 +1,25 @@
+<app-layout pageTitle="Dashboard">
+    <p>Estado actual de los microservicios backend.</p>
+
+    @if (loading) {
+        <div>Cargando estados</div>
+    }
+
+    @if (error) {
+        <div>{{ error }}</div>
+    }
+
+    @if (!loading && !error) {
+        <div class="status-grid">
+            @for (service of servicesStatus; track service.service) {
+                <div class="status-card">
+                    <h3>{{ service.service }}</h3>
+                    <p><strong>Version:</strong> {{ service.version }}</p>
+                    <p><strong>Entorno:</strong> {{ service.environment }}</p>
+                    <p><strong>Puerto:</strong> {{ service.port }}</p>
+                    <p><strong>Fecha:</strong> {{ service.timestamp }}</p>
+                </div>
+            }
+        </div>
+    }
+</app-layout>

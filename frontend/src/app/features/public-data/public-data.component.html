@@ -1,0 +1,25 @@
+<app-layout pageTitle="API Publica">
+    <p>Datos obtenidos desde JSONPlaceholder.</p>
+
+    <button class="reload-btn" (click)="reload()">Recargar</button>
+
+    @if (loading) {
+    <div>Cargando publicaciones...</div>
+    }
+
+    @if (error) {
+    <div>{{ error }}</div>
+    }
+
+    @if (!loading && !error) {
+    <div class="posts-grid">
+        @for (post of posts; track post.id) {
+        <article class="post-card">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.body }}</p>
+            <small>Post ID: {{ post.id }} | User ID: {{ post.userId }}</small>
+        </article>
+        }
+    </div>
+    }
+</app-layout>

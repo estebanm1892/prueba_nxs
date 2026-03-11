@@ -1,0 +1,36 @@
+<app-layout pageTitle="Usuarios">
+    <p>Listado obtenido desde el microservicio de usuarios.</p>
+
+    @if (loading) {
+        <div>Cargando usuarios...</div>
+    }
+
+    @if (error) {
+        <div>{{ error }}</div>
+    }
+
+    @if (!loading && !error) {
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Rol</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (user of users; track user.id) {
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.role }}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    }
+</app-layout>

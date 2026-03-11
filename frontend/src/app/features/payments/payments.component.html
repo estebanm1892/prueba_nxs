@@ -1,0 +1,36 @@
+<app-layout pageTitle="Pagos">
+    <p>Listado obtenido desde el microservicio de pagos.</p>
+
+    @if (loading) {
+        <div>Cargando pagos...</div>
+    }
+
+    @if (error) {
+        <div>{{ error }}</div>
+    }
+
+    @if (!loading && !error) {
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID Pago</th>
+                    <th>ID Pedido</th>
+                    <th>Monto</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (payment of payments; track payment.id) {
+                <tr>
+                    <td>{{ payment.id }}</td>
+                    <td>{{ payment.orderId }}</td>
+                    <td>{{ payment.amount | currency }}</td>
+                    <td>{{ payment.status }}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    }
+</app-layout>
