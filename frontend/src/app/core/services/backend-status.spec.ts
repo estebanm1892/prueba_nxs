@@ -1,13 +1,17 @@
 import { TestBed } from '@angular/core/testing';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
-import { BackendStatus } from './backend-status';
+import { BackendStatusService } from './backend-status.service';
 
-describe('BackendStatus', () => {
-  let service: BackendStatus;
+describe('BackendStatusService', () => {
+  let service: BackendStatusService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(BackendStatus);
+    TestBed.configureTestingModule({
+      providers: [provideHttpClient(), provideHttpClientTesting()]
+    });
+    service = TestBed.inject(BackendStatusService);
   });
 
   it('should be created', () => {
